@@ -15,7 +15,7 @@ export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
   };
 
   return (
-    <footer className="relative bg-obsidian-deep text-ivory pt-16 sm:pt-20 pb-10 sm:pb-12 px-4 sm:px-6 md:px-12 select-none">
+    <footer className="relative bg-obsidian-deep text-ivory pt-16 sm:pt-20 pb-10 sm:pb-12 px-4 sm:px-6 md:px-12 select-none overflow-hidden w-full max-w-full">
       <div className="max-w-[1500px] mx-auto space-y-16">
         {/* Top Technical Metadata Row */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-graphite-light font-mono text-xs">
@@ -125,7 +125,7 @@ export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
 
         {/* COLOSSAL OVERSIZED EDITORIAL BRAND TYPOGRAPHY UP TO 12REM */}
         <div className="py-8 md:py-14 text-center overflow-hidden border-b border-graphite-light select-none">
-          <h2 className="font-serif font-black text-[13vw] tracking-tighter900 leading-[0.8] uppercase headline-outline-gold hover:text-gold-illuminated transition-colors duration-150">
+          <h2 className="font-serif font-black text-4xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] xl:text-[12rem] tracking-tight sm:tracking-tighter900 leading-[0.84] uppercase headline-outline-gold hover:text-gold-illuminated transition-colors duration-150 break-words">
             LA LETIZIA
           </h2>
           <div className="font-mono text-[10px] md:text-xs uppercase tracking-editorial text-gold-champagne/80 mt-4">

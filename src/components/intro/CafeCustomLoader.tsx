@@ -113,7 +113,7 @@ export const CafeCustomLoader: React.FC<CafeCustomLoaderProps> = ({
         </div>
 
         {/* High-Precision Horizontal Progress Gauge */}
-        <div className="w-36 xs:w-44 sm:w-64 max-w-[80vw] mx-auto space-y-1">
+        <div className="w-36 xs:w-44 sm:w-64 max-w-[80%] mx-auto space-y-1">
           <div className="w-full h-1 bg-graphite border border-graphite-light overflow-hidden">
             <div
               className="h-full bg-gold-illuminated transition-all duration-150 ease-out shadow-[0_0_8px_#E5AE4C]"

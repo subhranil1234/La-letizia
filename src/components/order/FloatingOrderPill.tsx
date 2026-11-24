@@ -21,7 +21,7 @@ export const FloatingOrderPill: React.FC<FloatingOrderPillProps> = ({
   return (
     <aside
       aria-label="Active order summary dock"
-      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 select-none animate-in slide-in-from-bottom-4 duration-200 max-w-[calc(100vw-2rem)]"
+      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 select-none animate-in slide-in-from-bottom-4 duration-200 max-w-[calc(100%-2rem)]"
     >
       <div className="bg-obsidian border-2 border-gold-illuminated shadow-2xl p-2.5 sm:p-3 flex items-center gap-3 sm:gap-4 font-mono">
         <div className="flex items-center gap-2 pl-2">

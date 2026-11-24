@@ -40,7 +40,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <>
       <header
-        className={`fixed top-0 inset-x-0 z-40 transition-colors duration-150 pt-[env(safe-area-inset-top)] ${
+        className={`fixed top-0 inset-x-0 z-40 w-full max-w-full overflow-x-hidden transition-colors duration-150 pt-[env(safe-area-inset-top)] ${
           scrolled
             ? 'bg-obsidian/95 border-b border-graphite-light backdrop-blur-md py-3.5 sm:py-4'
             : 'bg-obsidian/80 border-b border-white/5 py-4 sm:py-5'

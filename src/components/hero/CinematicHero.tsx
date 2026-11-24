@@ -60,12 +60,12 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
             </div>
 
             {/* Solid Giant 900 Typography up to 12rem */}
-            <h1 className="font-serif font-black text-[2.8rem] xs:text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] xl:text-[12rem] tracking-tighter900 leading-[0.84] uppercase text-ivory break-words">
+            <h1 className="font-serif font-black text-3xl xs:text-4xl sm:text-7xl md:text-8xl lg:text-[10rem] xl:text-[12rem] tracking-tight sm:tracking-tighter900 leading-[0.88] uppercase text-ivory break-words">
               LA LETIZIA
             </h1>
 
             {/* Outlined Headline Layer */}
-            <div className="font-serif font-black text-lg xs:text-xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight900 uppercase headline-outline-gold pt-1 sm:pt-2">
+            <div className="font-serif font-black text-sm xs:text-base sm:text-3xl md:text-4xl lg:text-5xl tracking-tight sm:tracking-tight900 uppercase headline-outline-gold pt-1 sm:pt-2">
               CAFÉ & RESTRO • KOLKATA
             </div>
 

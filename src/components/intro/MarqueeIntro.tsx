@@ -23,6 +23,13 @@ export const MarqueeIntro: React.FC<MarqueeIntroProps> = ({ onComplete, onCurtai
   const [elapsedMs, setElapsedMs] = useState(0);
 
   useEffect(() => {
+    // Reset horizontal scroll position immediately on mount
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ left: 0 });
+      document.documentElement.scrollLeft = 0;
+      document.body.scrollLeft = 0;
+    }
+
     // Check reduced motion preference
     if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       onCurtainOpenRef.current?.();
@@ -160,66 +167,76 @@ export const MarqueeIntro: React.FC<MarqueeIntroProps> = ({ onComplete, onCurtai
 
         {/* STAGE 1: FAST MARQUEE STREAMS (Pace Intact across Vectors) */}
         <div
-          className={`absolute inset-0 pointer-events-none flex flex-col justify-around py-4 sm:py-8 transition-all duration-700 ease-out ${
+          className={`absolute inset-0 w-full max-w-full overflow-hidden pointer-events-none flex flex-col justify-around py-4 sm:py-8 transition-all duration-700 ease-out ${
             phase !== 'streaming'
               ? 'scale-40 opacity-0 blur-lg translate-y-0'
               : 'scale-100 opacity-90 blur-0'
           }`}
           aria-hidden="true"
         >
-          {/* Band 01: Angled -5deg, Left to Right, Gold Champagne Serif */}
-          <div className="w-[220vw] -ml-[60vw] rotate-[-5deg] overflow-hidden">
-            <div className="intro-stream-l whitespace-nowrap">
-              <div className="inline-block font-serif font-black text-xl sm:text-4xl md:text-6xl uppercase tracking-tighter900 text-gold-champagne/80">
-                WATERFALL ATRIUM ★ HONEYCOMB RELIEF ★ ZEROONE ARCHITECTURE ★ ARTISAN MOCKTAILS ★ WATERFALL ATRIUM ★ HONEYCOMB RELIEF ★ ZEROONE ARCHITECTURE ★
+          {/* Band 01: Angled -3deg, Left to Right, Gold Champagne Serif */}
+          <div className="w-full max-w-full overflow-hidden">
+            <div className="w-[125%] -ml-[12%] rotate-[-2deg] sm:rotate-[-5deg] overflow-hidden">
+              <div className="intro-stream-l whitespace-nowrap">
+                <div className="inline-block font-serif font-black text-xl sm:text-4xl md:text-6xl uppercase tracking-tighter900 text-gold-champagne/80">
+                  WATERFALL ATRIUM ★ HONEYCOMB RELIEF ★ ZEROONE ARCHITECTURE ★ ARTISAN MOCKTAILS ★ WATERFALL ATRIUM ★ HONEYCOMB RELIEF ★ ZEROONE ARCHITECTURE ★
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Band 02: Angled 6deg, Right to Left, Outlined Ivory Serif */}
-          <div className="w-[220vw] -ml-[60vw] rotate-[6deg] overflow-hidden">
-            <div className="intro-stream-r whitespace-nowrap">
-              <div className="inline-block font-serif font-black text-lg sm:text-3xl md:text-5xl uppercase tracking-tight900 headline-outline-ivory opacity-75">
-                // BALLYGUNGE 700017 // CRAFT KEBABS // BOTANICAL BALCONY // FOOSBALL SALON // BALLYGUNGE 700017 // CRAFT KEBABS // BOTANICAL BALCONY //
+          {/* Band 02: Angled 3deg, Right to Left, Outlined Ivory Serif */}
+          <div className="w-full max-w-full overflow-hidden">
+            <div className="w-[125%] -ml-[12%] rotate-[2deg] sm:rotate-[6deg] overflow-hidden">
+              <div className="intro-stream-r whitespace-nowrap">
+                <div className="inline-block font-serif font-black text-lg sm:text-3xl md:text-5xl uppercase tracking-tight900 headline-outline-ivory opacity-75">
+                  // BALLYGUNGE 700017 // CRAFT KEBABS // BOTANICAL BALCONY // FOOSBALL SALON // BALLYGUNGE 700017 // CRAFT KEBABS // BOTANICAL BALCONY //
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Band 03: Angled -3deg, Left to Right, Electric Teal Monospace */}
-          <div className="w-[220vw] -ml-[60vw] rotate-[-3deg] overflow-hidden">
-            <div className="intro-stream-l whitespace-nowrap">
-              <div className="inline-block font-mono font-bold text-sm sm:text-xl md:text-2xl uppercase tracking-widest text-electricTeal/90">
-                CASSEROLE COFFEE • CASUAL LUXURY • OPPOSITE QUEST MALL GATE 5 • ZEROONE • CASSEROLE COFFEE • CASUAL LUXURY •
+          {/* Band 03: Angled -2deg, Left to Right, Electric Teal Monospace */}
+          <div className="w-full max-w-full overflow-hidden">
+            <div className="w-[125%] -ml-[12%] rotate-[-1.5deg] sm:rotate-[-3deg] overflow-hidden">
+              <div className="intro-stream-l whitespace-nowrap">
+                <div className="inline-block font-mono font-bold text-sm sm:text-xl md:text-2xl uppercase tracking-widest text-electricTeal/90">
+                  CASSEROLE COFFEE • CASUAL LUXURY • OPPOSITE QUEST MALL GATE 5 • ZEROONE • CASSEROLE COFFEE • CASUAL LUXURY •
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Band 04: Angled 4deg, Right to Left, Outlined Gold Serif (Desktop / Tablet) */}
-          <div className="hidden sm:block w-[220vw] -ml-[60vw] rotate-[4deg] overflow-hidden">
-            <div className="intro-stream-r whitespace-nowrap">
-              <div className="inline-block font-serif font-black text-2xl sm:text-4xl md:text-6xl uppercase tracking-tight900 headline-outline-gold opacity-80">
-                WATER WALL CASCADE • EXAGGERATED MINIMALISM • ROYAL SHEESHA • OBSIDIAN NOIR • WATER WALL CASCADE •
+          {/* Band 04: Angled 2deg, Right to Left, Outlined Gold Serif (Desktop / Tablet) */}
+          <div className="hidden sm:block w-full max-w-full overflow-hidden">
+            <div className="w-[125%] -ml-[12%] rotate-[4deg] overflow-hidden">
+              <div className="intro-stream-r whitespace-nowrap">
+                <div className="inline-block font-serif font-black text-2xl sm:text-4xl md:text-6xl uppercase tracking-tight900 headline-outline-gold opacity-80">
+                  WATER WALL CASCADE • EXAGGERATED MINIMALISM • ROYAL SHEESHA • OBSIDIAN NOIR • WATER WALL CASCADE •
+                </div>
               </div>
             </div>
           </div>
 
           {/* Band 05: Angled -1deg, Left to Right, Neon Magenta Monospace (Desktop / Tablet) */}
-          <div className="hidden sm:block w-[220vw] -ml-[60vw] rotate-[-1deg] overflow-hidden">
-            <div className="intro-stream-l whitespace-nowrap">
-              <div className="inline-block font-mono font-bold text-base sm:text-xl md:text-2xl uppercase tracking-widest text-neonMagenta/85">
-                LA LETIZIA CAFÉ & RESTRO • 12:00 PM – 12:30 AM DAILY • RESTRO GASTRONOMY • LA LETIZIA CAFÉ & RESTRO •
+          <div className="hidden sm:block w-full max-w-full overflow-hidden">
+            <div className="w-[125%] -ml-[12%] rotate-[-1deg] overflow-hidden">
+              <div className="intro-stream-l whitespace-nowrap">
+                <div className="inline-block font-mono font-bold text-base sm:text-xl md:text-2xl uppercase tracking-widest text-neonMagenta/85">
+                  LA LETIZIA CAFÉ & RESTRO • 12:00 PM – 12:30 AM DAILY • RESTRO GASTRONOMY • LA LETIZIA CAFÉ & RESTRO •
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         {/* STAGE 2: UNIFIED PERSISTENT TITLE CARD & BESPOKE CUSTOM LOADER
-            STAYS ON SCREEN TOGETHER UNTIL FULL DURATION (From 1.1s to 6.0s) */}
+            PERFECTLY CENTERED HORIZONTALLY AND VERTICALLY ON ALL VIEWPORTS */}
         <div
-          className={`relative z-10 flex flex-col items-center justify-center text-center p-3.5 xs:p-4 sm:p-7 md:p-8 w-full max-w-[92vw] sm:max-w-2xl md:max-w-3xl mx-auto transition-all duration-700 ease-out select-none ${
+          className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center justify-center text-center p-3.5 xs:p-4 sm:p-7 md:p-8 w-[calc(100%-2rem)] max-w-sm sm:max-w-xl md:max-w-2xl transition-all duration-700 ease-out select-none ${
             phase === 'active_showcase'
               ? 'opacity-100 scale-100 pointer-events-auto'
-              : 'opacity-0 scale-95 pointer-events-none absolute'
+              : 'opacity-0 scale-95 pointer-events-none'
           }`}
         >
           {/* Architectural Framing Brackets Framing the Unified Showcase */}

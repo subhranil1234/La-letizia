@@ -25,7 +25,7 @@ export const TextMarquee: React.FC<TextMarqueeProps> = ({
 
   return (
     <div
-      className="relative w-full overflow-hidden select-none py-3 border-y border-graphite-light bg-obsidian-deep"
+      className="relative w-full max-w-full overflow-hidden select-none py-3 border-y border-graphite-light bg-obsidian-deep"
       role="region"
       aria-label="Scrolling Text Marquee"
     >

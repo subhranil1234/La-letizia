@@ -30,10 +30,20 @@ export default function Home() {
   const [isOrderModalOpen, setIsOrderModalOpen] = useState<boolean>(false);
 
   const handleCurtainOpen = useCallback(() => {
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ left: 0 });
+      document.documentElement.scrollLeft = 0;
+      document.body.scrollLeft = 0;
+    }
     setSiteRevealed(true);
   }, []);
 
   const handleIntroComplete = useCallback(() => {
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ left: 0 });
+      document.documentElement.scrollLeft = 0;
+      document.body.scrollLeft = 0;
+    }
     setSiteRevealed(true);
     setShowIntro(false);
   }, []);
@@ -176,7 +186,7 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen bg-obsidian text-ivory antialiased selection:bg-gold-illuminated selection:text-obsidian relative">
+    <main className="min-h-screen w-full max-w-full overflow-x-hidden bg-obsidian text-ivory antialiased selection:bg-gold-illuminated selection:text-obsidian relative">
       {/* 00. Kinetic Marquee Convergence Intro & Bespoke Cafe Loader */}
       {showIntro && (
         <MarqueeIntro
@@ -188,7 +198,7 @@ export default function Home() {
 
       {/* Dynamic Animated Site Wrapper */}
       <div
-        className={`transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+        className={`w-full max-w-full overflow-x-hidden transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           siteRevealed || !showIntro
             ? 'scale-100 opacity-100 filter-none'
             : 'scale-[0.96] opacity-90 blur-[1px]'
