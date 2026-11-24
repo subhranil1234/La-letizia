@@ -40,10 +40,10 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <>
       <header
-        className={`fixed top-0 inset-x-0 z-40 transition-colors duration-150 ${
+        className={`fixed top-0 inset-x-0 z-40 transition-colors duration-150 pt-[env(safe-area-inset-top)] ${
           scrolled
-            ? 'bg-obsidian/95 border-b border-graphite-light backdrop-blur-md py-4'
-            : 'bg-obsidian/80 border-b border-white/5 py-5'
+            ? 'bg-obsidian/95 border-b border-graphite-light backdrop-blur-md py-3.5 sm:py-4'
+            : 'bg-obsidian/80 border-b border-white/5 py-4 sm:py-5'
         }`}
       >
         <div className="max-w-[1500px] mx-auto px-4 sm:px-6 md:px-12 flex items-center justify-between">
@@ -106,7 +106,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="flex lg:hidden items-center gap-2">
             <button
               onClick={onOpenOrderModal}
-              className={`p-2 font-mono text-xs uppercase tracking-widest flex items-center gap-1 transition-none border ${
+              className={`min-h-[44px] min-w-[44px] px-2.5 py-2 font-mono text-xs uppercase tracking-widest flex items-center justify-center gap-1 transition-none border ${
                 orderCount > 0
                   ? 'border-gold-illuminated bg-gold-illuminated text-obsidian font-bold'
                   : 'border-graphite-light text-ivory-dim bg-graphite/40'
@@ -119,7 +119,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="p-2 border border-graphite-light bg-graphite/60 text-ivory hover:border-gold-illuminated hover:text-gold-illuminated transition-none focus-visible:ring-2 focus-visible:ring-gold-illuminated"
+              className="min-h-[44px] min-w-[44px] p-2.5 border border-graphite-light bg-graphite/60 text-ivory hover:border-gold-illuminated hover:text-gold-illuminated transition-none flex items-center justify-center focus-visible:ring-2 focus-visible:ring-gold-illuminated"
               aria-label={mobileOpen ? 'Close Menu' : 'Open Menu'}
             >
               {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}

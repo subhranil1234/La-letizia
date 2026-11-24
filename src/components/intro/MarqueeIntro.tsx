@@ -137,68 +137,78 @@ export const MarqueeIntro: React.FC<MarqueeIntroProps> = ({ onComplete, onCurtai
         }`}
       >
         {/* Corner Technical Registration Marks */}
-        <div className="absolute top-4 sm:top-6 left-4 sm:left-6 font-mono text-[9px] sm:text-[10px] uppercase tracking-widest text-gold-champagne/70 flex items-center gap-2">
+        <div className="absolute top-[max(0.75rem,env(safe-area-inset-top))] left-3 sm:left-6 font-mono text-[8px] sm:text-[10px] uppercase tracking-widest text-gold-champagne/70 flex items-center gap-1.5 sm:gap-2">
           <span className="w-1.5 h-1.5 bg-electricTeal inline-block shrink-0" />
           <span className="hidden xs:inline">ZEROONE // SENSORY PROLOGUE</span>
           <span className="xs:hidden">ZEROONE</span>
         </div>
 
-        <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 font-mono text-[10px] uppercase tracking-widest text-ivory-dim/60 hidden sm:block">
+        <div className="absolute bottom-[max(0.75rem,env(safe-area-inset-bottom))] left-3 sm:left-6 font-mono text-[9px] sm:text-[10px] uppercase tracking-widest text-ivory-dim/60 hidden sm:block">
           <span>BALLYGUNGE 700017 • LAT 22.5392° N / LONG 88.3653° E</span>
         </div>
 
         {/* Top Right Skip CTA */}
-        <div className="absolute top-4 sm:top-6 right-4 sm:right-6 z-40">
+        <div className="absolute top-[max(0.75rem,env(safe-area-inset-top))] right-3 sm:right-6 z-40">
           <button
             onClick={handleSkip}
-            className="border border-graphite-light text-ivory-dim hover:text-gold-illuminated hover:border-gold-illuminated px-2.5 sm:px-3 py-1 sm:py-1.5 font-mono text-[9px] sm:text-[10px] uppercase tracking-widest transition-none focus-visible:ring-2 focus-visible:ring-gold-illuminated"
+            className="border border-graphite-light text-ivory-dim hover:text-gold-illuminated hover:border-gold-illuminated px-2.5 sm:px-3 py-1 sm:py-1.5 font-mono text-[8px] sm:text-[10px] uppercase tracking-widest transition-none focus-visible:ring-2 focus-visible:ring-gold-illuminated"
             aria-label="Skip intro animation"
           >
             [ SKIP INTRO ]
           </button>
         </div>
 
-        {/* STAGE 1: FAST MARQUEE STREAMS (Pace Intact across 5 Vectors) */}
+        {/* STAGE 1: FAST MARQUEE STREAMS (Pace Intact across Vectors) */}
         <div
-          className={`absolute inset-0 pointer-events-none flex flex-col justify-around py-8 transition-all duration-700 ease-out ${
+          className={`absolute inset-0 pointer-events-none flex flex-col justify-around py-4 sm:py-8 transition-all duration-700 ease-out ${
             phase !== 'streaming'
               ? 'scale-40 opacity-0 blur-lg translate-y-0'
               : 'scale-100 opacity-90 blur-0'
           }`}
           aria-hidden="true"
         >
-          {/* Band 01: Angled -6deg, Left to Right, Gold Champagne Serif */}
-          <div className="w-[180vw] -ml-[40vw] rotate-[-6deg] overflow-hidden whitespace-nowrap intro-stream-l">
-            <div className="inline-block font-serif font-black text-3xl sm:text-5xl md:text-7xl uppercase tracking-tighter900 text-gold-champagne/80">
-              WATERFALL ATRIUM ★ HONEYCOMB RELIEF ★ ZEROONE ARCHITECTURE ★ ARTISAN MOCKTAILS ★ WATERFALL ATRIUM ★ HONEYCOMB RELIEF ★
+          {/* Band 01: Angled -5deg, Left to Right, Gold Champagne Serif */}
+          <div className="w-[220vw] -ml-[60vw] rotate-[-5deg] overflow-hidden">
+            <div className="intro-stream-l whitespace-nowrap">
+              <div className="inline-block font-serif font-black text-xl sm:text-4xl md:text-6xl uppercase tracking-tighter900 text-gold-champagne/80">
+                WATERFALL ATRIUM ★ HONEYCOMB RELIEF ★ ZEROONE ARCHITECTURE ★ ARTISAN MOCKTAILS ★ WATERFALL ATRIUM ★ HONEYCOMB RELIEF ★ ZEROONE ARCHITECTURE ★
+              </div>
             </div>
           </div>
 
-          {/* Band 02: Angled 7deg, Right to Left, Outlined Ivory Serif */}
-          <div className="w-[180vw] -ml-[40vw] rotate-[7deg] overflow-hidden whitespace-nowrap intro-stream-r">
-            <div className="inline-block font-serif font-black text-2xl sm:text-4xl md:text-6xl uppercase tracking-tight900 headline-outline-ivory opacity-75">
-              // BALLYGUNGE 700017 // CRAFT KEBABS // BOTANICAL BALCONY // FOOSBALL SALON // BALLYGUNGE 700017 // CRAFT KEBABS //
+          {/* Band 02: Angled 6deg, Right to Left, Outlined Ivory Serif */}
+          <div className="w-[220vw] -ml-[60vw] rotate-[6deg] overflow-hidden">
+            <div className="intro-stream-r whitespace-nowrap">
+              <div className="inline-block font-serif font-black text-lg sm:text-3xl md:text-5xl uppercase tracking-tight900 headline-outline-ivory opacity-75">
+                // BALLYGUNGE 700017 // CRAFT KEBABS // BOTANICAL BALCONY // FOOSBALL SALON // BALLYGUNGE 700017 // CRAFT KEBABS // BOTANICAL BALCONY //
+              </div>
             </div>
           </div>
 
           {/* Band 03: Angled -3deg, Left to Right, Electric Teal Monospace */}
-          <div className="w-[180vw] -ml-[40vw] rotate-[-3deg] overflow-hidden whitespace-nowrap intro-stream-l">
-            <div className="inline-block font-mono font-bold text-lg sm:text-2xl md:text-3xl uppercase tracking-widest text-electricTeal/90">
-              CASSEROLE COFFEE • CASUAL LUXURY • OPPOSITE QUEST MALL GATE 5 • ZEROONE • CASSEROLE COFFEE • CASUAL LUXURY •
+          <div className="w-[220vw] -ml-[60vw] rotate-[-3deg] overflow-hidden">
+            <div className="intro-stream-l whitespace-nowrap">
+              <div className="inline-block font-mono font-bold text-sm sm:text-xl md:text-2xl uppercase tracking-widest text-electricTeal/90">
+                CASSEROLE COFFEE • CASUAL LUXURY • OPPOSITE QUEST MALL GATE 5 • ZEROONE • CASSEROLE COFFEE • CASUAL LUXURY •
+              </div>
             </div>
           </div>
 
-          {/* Band 04: Angled 5deg, Right to Left, Outlined Gold Serif */}
-          <div className="w-[180vw] -ml-[40vw] rotate-[5deg] overflow-hidden whitespace-nowrap intro-stream-r">
-            <div className="inline-block font-serif font-black text-2xl sm:text-4xl md:text-6xl uppercase tracking-tight900 headline-outline-gold opacity-80">
-              WATER WALL CASCADE • EXAGGERATED MINIMALISM • ROYAL SHEESHA • OBSIDIAN NOIR • WATER WALL CASCADE •
+          {/* Band 04: Angled 4deg, Right to Left, Outlined Gold Serif (Desktop / Tablet) */}
+          <div className="hidden sm:block w-[220vw] -ml-[60vw] rotate-[4deg] overflow-hidden">
+            <div className="intro-stream-r whitespace-nowrap">
+              <div className="inline-block font-serif font-black text-2xl sm:text-4xl md:text-6xl uppercase tracking-tight900 headline-outline-gold opacity-80">
+                WATER WALL CASCADE • EXAGGERATED MINIMALISM • ROYAL SHEESHA • OBSIDIAN NOIR • WATER WALL CASCADE •
+              </div>
             </div>
           </div>
 
-          {/* Band 05: Angled -1deg, Left to Right, Neon Magenta Monospace */}
-          <div className="w-[180vw] -ml-[40vw] rotate-[-1deg] overflow-hidden whitespace-nowrap intro-stream-l">
-            <div className="inline-block font-mono font-bold text-base sm:text-xl md:text-2xl uppercase tracking-widest text-neonMagenta/85">
-              LA LETIZIA CAFÉ & RESTRO • 12:00 PM – 12:30 AM DAILY • RESTRO GASTRONOMY • LA LETIZIA CAFÉ & RESTRO •
+          {/* Band 05: Angled -1deg, Left to Right, Neon Magenta Monospace (Desktop / Tablet) */}
+          <div className="hidden sm:block w-[220vw] -ml-[60vw] rotate-[-1deg] overflow-hidden">
+            <div className="intro-stream-l whitespace-nowrap">
+              <div className="inline-block font-mono font-bold text-base sm:text-xl md:text-2xl uppercase tracking-widest text-neonMagenta/85">
+                LA LETIZIA CAFÉ & RESTRO • 12:00 PM – 12:30 AM DAILY • RESTRO GASTRONOMY • LA LETIZIA CAFÉ & RESTRO •
+              </div>
             </div>
           </div>
         </div>
@@ -206,58 +216,58 @@ export const MarqueeIntro: React.FC<MarqueeIntroProps> = ({ onComplete, onCurtai
         {/* STAGE 2: UNIFIED PERSISTENT TITLE CARD & BESPOKE CUSTOM LOADER
             STAYS ON SCREEN TOGETHER UNTIL FULL DURATION (From 1.1s to 6.0s) */}
         <div
-          className={`relative z-10 flex flex-col items-center justify-center text-center px-4 max-w-4xl mx-auto overflow-hidden transition-all duration-700 ease-out select-none ${
+          className={`relative z-10 flex flex-col items-center justify-center text-center p-3.5 xs:p-4 sm:p-7 md:p-8 w-full max-w-[92vw] sm:max-w-2xl md:max-w-3xl mx-auto transition-all duration-700 ease-out select-none ${
             phase === 'active_showcase'
               ? 'opacity-100 scale-100 pointer-events-auto'
               : 'opacity-0 scale-95 pointer-events-none absolute'
           }`}
         >
           {/* Architectural Framing Brackets Framing the Unified Showcase */}
-          <div className="absolute -inset-3 sm:-inset-6 md:-inset-8 border border-gold-illuminated/30 pointer-events-none" />
-          <div className="absolute -top-3 -left-3 sm:-top-6 sm:-left-6 md:-top-8 md:-left-8 w-3 sm:w-4 h-3 sm:h-4 border-t-2 border-l-2 border-gold-illuminated pointer-events-none" />
-          <div className="absolute -top-3 -right-3 sm:-top-6 sm:-right-6 md:-top-8 md:-right-8 w-3 sm:w-4 h-3 sm:h-4 border-t-2 border-r-2 border-gold-illuminated pointer-events-none" />
-          <div className="absolute -bottom-3 -left-3 sm:-bottom-6 sm:-left-6 md:-bottom-8 md:-left-8 w-3 sm:w-4 h-3 sm:h-4 border-b-2 border-l-2 border-gold-illuminated pointer-events-none" />
-          <div className="absolute -bottom-3 -right-3 sm:-bottom-8 sm:-right-8 md:-bottom-8 md:-right-8 w-3 sm:w-4 h-3 sm:h-4 border-b-2 border-r-2 border-gold-illuminated pointer-events-none" />
+          <div className="absolute inset-0 border border-gold-illuminated/40 pointer-events-none" />
+          <div className="absolute -top-1 -left-1 sm:-top-1.5 sm:-left-1.5 w-3 sm:w-4 h-3 sm:h-4 border-t-2 border-l-2 border-gold-illuminated pointer-events-none" />
+          <div className="absolute -top-1 -right-1 sm:-top-1.5 sm:-right-1.5 w-3 sm:w-4 h-3 sm:h-4 border-t-2 border-r-2 border-gold-illuminated pointer-events-none" />
+          <div className="absolute -bottom-1 -left-1 sm:-bottom-1.5 sm:-left-1.5 w-3 sm:w-4 h-3 sm:h-4 border-b-2 border-l-2 border-gold-illuminated pointer-events-none" />
+          <div className="absolute -bottom-1 -right-1 sm:-bottom-1.5 sm:-right-1.5 w-3 sm:w-4 h-3 sm:h-4 border-b-2 border-r-2 border-gold-illuminated pointer-events-none" />
 
           {/* Unified Brand Showcase: Logo Emblem + Colossal Title Card */}
-          <div className="space-y-1.5 sm:space-y-3">
-            <div className="flex items-center justify-center gap-2 font-mono text-[8px] sm:text-[10px] uppercase tracking-editorial text-gold-illuminated font-bold">
+          <div className="space-y-1 sm:space-y-2.5">
+            <div className="flex items-center justify-center gap-1.5 sm:gap-2 font-mono text-[7px] xs:text-[8px] sm:text-[10px] uppercase tracking-editorial text-gold-illuminated font-bold">
               <span className="w-1.5 h-[1px] bg-gold-illuminated" />
               <span>ZEROONE NOCTURNE DESTINATION</span>
               <span className="w-1.5 h-[1px] bg-gold-illuminated" />
             </div>
 
             {/* Emblem and Brand Monogram */}
-            <div className="flex items-center justify-center gap-2.5 sm:gap-3">
+            <div className="flex items-center justify-center gap-2 sm:gap-3">
               <div className="sm:hidden">
-                <LogoEmblem size={38} glow={true} />
+                <LogoEmblem size={32} glow={true} />
               </div>
               <div className="hidden sm:block">
-                <LogoEmblem size={50} glow={true} />
+                <LogoEmblem size={46} glow={true} />
               </div>
               <div className="text-left font-mono">
-                <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-gold-champagne/80 block">
+                <span className="text-[8px] sm:text-[10px] uppercase tracking-widest text-gold-champagne/80 block leading-tight">
                   BALLYGUNGE, KOLKATA
                 </span>
-                <span className="text-[8px] sm:text-[9px] text-ivory-dim tracking-wider block">
+                <span className="text-[7px] sm:text-[9px] text-ivory-dim tracking-wider block leading-tight">
                   ESTABLISHED 2024
                 </span>
               </div>
             </div>
 
             {/* Colossal 900 Title with Traveling Gold Metallic Shimmer */}
-            <h1 className="font-serif font-black text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-[7.5rem] leading-[0.88] uppercase tracking-tighter900 intro-title-slow drop-shadow-2xl">
+            <h1 className="font-serif font-black text-2xl xs:text-3xl sm:text-5xl md:text-6xl lg:text-[6.5rem] leading-[0.9] uppercase tracking-tight sm:tracking-tighter900 intro-title-slow drop-shadow-2xl">
               <span className="intro-shimmer">LA LETIZIA</span>
             </h1>
 
             {/* Outlined Subtitle */}
-            <div className="font-serif font-black text-xs sm:text-xl md:text-2xl lg:text-3xl tracking-tight900 uppercase headline-outline-gold">
+            <div className="font-serif font-black text-[10px] xs:text-xs sm:text-lg md:text-xl tracking-wider sm:tracking-tight900 uppercase headline-outline-gold">
               CAFÉ & RESTRO
             </div>
           </div>
 
           {/* Gold Hairline Divider */}
-          <div className="w-20 sm:w-36 h-[1px] bg-gradient-to-r from-transparent via-gold-illuminated to-transparent my-2 sm:my-4" />
+          <div className="w-16 sm:w-28 h-[1px] bg-gradient-to-r from-transparent via-gold-illuminated to-transparent my-1.5 sm:my-3" />
 
           {/* Bespoke Honeycomb & Hexagonal Ring Loader (Co-existing seamlessly under the Title) */}
           <div className="w-full">
@@ -276,7 +286,7 @@ export const MarqueeIntro: React.FC<MarqueeIntroProps> = ({ onComplete, onCurtai
           />
         </div>
 
-        <div className="absolute bottom-3 right-6 font-mono text-[9px] uppercase tracking-widest text-gold-champagne">
+        <div className="absolute bottom-[max(0.75rem,env(safe-area-inset-bottom))] right-3 sm:right-6 font-mono text-[8px] sm:text-[9px] uppercase tracking-widest text-gold-champagne">
           <span>{secondsDisplay}S // 6.8S</span>
         </div>
       </div>

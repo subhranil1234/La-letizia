@@ -221,7 +221,7 @@ export const TakeawayHub: React.FC<TakeawayHubProps> = ({ initialDishes = [] }) 
                   placeholder="e.g. S. Mukherjee"
                   value={customerName}
                   onChange={(e) => setCustomerName(e.target.value)}
-                  className={`w-full px-4 py-3 bg-obsidian border text-ivory font-mono text-xs uppercase placeholder:text-ivory-dim/40 focus:border-gold-illuminated focus:outline-none transition-none ${
+                  className={`w-full px-4 py-3 bg-obsidian border text-ivory font-mono text-base sm:text-xs uppercase placeholder:text-ivory-dim/40 focus:border-gold-illuminated focus:outline-none transition-none ${
                     errors.name ? 'border-red-400' : 'border-graphite-light'
                   }`}
                 />
@@ -239,7 +239,7 @@ export const TakeawayHub: React.FC<TakeawayHubProps> = ({ initialDishes = [] }) 
                   placeholder="+91 98300 00000"
                   value={customerPhone}
                   onChange={(e) => setCustomerPhone(e.target.value)}
-                  className={`w-full px-4 py-3 bg-obsidian border text-ivory font-mono text-xs uppercase placeholder:text-ivory-dim/40 focus:border-gold-illuminated focus:outline-none transition-none ${
+                  className={`w-full px-4 py-3 bg-obsidian border text-ivory font-mono text-base sm:text-xs uppercase placeholder:text-ivory-dim/40 focus:border-gold-illuminated focus:outline-none transition-none ${
                     errors.phone ? 'border-red-400' : 'border-graphite-light'
                   }`}
                 />
@@ -255,7 +255,7 @@ export const TakeawayHub: React.FC<TakeawayHubProps> = ({ initialDishes = [] }) 
                 <select
                   value={pickupTime}
                   onChange={(e) => setPickupTime(e.target.value)}
-                  className="w-full px-4 py-3 bg-obsidian border border-graphite-light text-ivory font-mono text-xs uppercase focus:border-gold-illuminated focus:outline-none transition-none"
+                  className="w-full px-4 py-3 bg-obsidian border border-graphite-light text-ivory font-mono text-base sm:text-xs uppercase focus:border-gold-illuminated focus:outline-none transition-none"
                 >
                   <option value="In 20–25 Mins">In 20–25 Mins (Fast Track)</option>
                   <option value="In 25–30 Mins">In 25–30 Mins (Standard)</option>

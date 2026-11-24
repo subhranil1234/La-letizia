@@ -20,8 +20,18 @@ export const CafeCustomLoader: React.FC<CafeCustomLoaderProps> = ({
   statusText,
   compact = false,
 }) => {
-  // Staged spatial status messages mapped to the café's authentic architecture
-  const resolvedStatus =
+  // Mobile short status messages (guaranteed single line on 320px–390px screens)
+  const resolvedStatusMobile =
+    progress < 28
+      ? '01 // WATERFALL ATRIUM'
+      : progress < 55
+      ? '02 // HONEYCOMB GAME SALON'
+      : progress < 82
+      ? '03 // BOTANICAL ROOFTOP'
+      : '04 // ARTISAN RESTRO';
+
+  // Desktop extended architectural status messages
+  const resolvedStatusDesktop =
     statusText ||
     (progress < 28
       ? '01 // CALIBRATING WATERFALL GLASSHOUSE ATRIUM'
@@ -34,9 +44,9 @@ export const CafeCustomLoader: React.FC<CafeCustomLoaderProps> = ({
   const roundedPct = Math.min(100, Math.max(0, Math.round(progress)));
 
   return (
-    <div className={`flex flex-col items-center justify-center select-none font-mono ${compact ? 'space-y-4' : 'space-y-6'}`}>
+    <div className={`flex flex-col items-center justify-center select-none font-mono ${compact ? 'space-y-2.5 sm:space-y-4' : 'space-y-4 sm:space-y-6'}`}>
       {/* Bespoke Concentric Geometric Hexagonal Ring Loader */}
-      <div className={`relative flex items-center justify-center ${compact ? 'w-24 h-24 sm:w-28 sm:h-28' : 'w-36 h-36 sm:w-44 sm:h-44'}`}>
+      <div className={`relative flex items-center justify-center ${compact ? 'w-16 h-16 xs:w-20 xs:h-20 sm:w-28 sm:h-28' : 'w-32 h-32 sm:w-44 sm:h-44'}`}>
         {/* Warm Ambient Filament Glow Flare */}
         <div
           className="absolute inset-0 bg-gold-illuminated/15 blur-2xl animate-filament pointer-events-none"
@@ -94,15 +104,16 @@ export const CafeCustomLoader: React.FC<CafeCustomLoaderProps> = ({
       </div>
 
       {/* Technical Status & Calibrated Progress Meter */}
-      <div className="text-center space-y-2.5 max-w-md px-4">
+      <div className="text-center space-y-1.5 sm:space-y-2.5 max-w-md px-2 sm:px-4">
         {/* Active Spatial Milestone Status */}
-        <div className="flex items-center justify-center gap-2 text-gold-champagne text-[10px] sm:text-[11px] uppercase tracking-widest font-bold">
+        <div className="flex items-center justify-center gap-1.5 sm:gap-2 text-gold-champagne text-[9px] sm:text-[11px] uppercase tracking-wide sm:tracking-widest font-bold">
           <span className="w-1.5 h-1.5 bg-gold-illuminated animate-ping shrink-0" />
-          <span>{resolvedStatus}</span>
+          <span className="sm:hidden">{resolvedStatusMobile}</span>
+          <span className="hidden sm:inline">{resolvedStatusDesktop}</span>
         </div>
 
         {/* High-Precision Horizontal Progress Gauge */}
-        <div className="w-48 sm:w-72 max-w-[85vw] mx-auto space-y-1">
+        <div className="w-36 xs:w-44 sm:w-64 max-w-[80vw] mx-auto space-y-1">
           <div className="w-full h-1 bg-graphite border border-graphite-light overflow-hidden">
             <div
               className="h-full bg-gold-illuminated transition-all duration-150 ease-out shadow-[0_0_8px_#E5AE4C]"
@@ -110,18 +121,18 @@ export const CafeCustomLoader: React.FC<CafeCustomLoaderProps> = ({
             />
           </div>
 
-          <div className="flex items-center justify-between text-[8px] sm:text-[10px] text-ivory-dim tracking-widest">
+          <div className="flex items-center justify-between text-[7px] xs:text-[8px] sm:text-[10px] text-ivory-dim tracking-wider sm:tracking-widest">
             <span className="text-gold-illuminated font-bold">{roundedPct}%</span>
             <span className="truncate ml-2">70 SOUTH PARK CIRCUS</span>
           </div>
         </div>
 
         {/* Pulsing Status Pips */}
-        <div className="flex items-center justify-center gap-1.5 pt-0.5">
+        <div className="flex items-center justify-center gap-1 sm:gap-1.5 pt-0.5">
           {[...Array(6)].map((_, i) => (
             <span
               key={i}
-              className={`w-1.5 h-1.5 inline-block transition-colors ${
+              className={`w-1 sm:w-1.5 h-1 sm:h-1.5 inline-block transition-colors ${
                 (i + 1) * 16 <= roundedPct ? 'bg-gold-illuminated' : 'bg-graphite-light'
               }`}
             />

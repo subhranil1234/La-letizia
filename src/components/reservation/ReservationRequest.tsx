@@ -216,7 +216,7 @@ export const ReservationRequest: React.FC<ReservationRequestProps> = ({
                       placeholder="e.g. Joydeep Sen"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className={`w-full px-4 py-3 bg-obsidian border text-ivory font-mono text-sm placeholder:text-ivory-dim/40 focus:border-gold-illuminated focus:outline-none transition-none ${
+                      className={`w-full px-4 py-3 bg-obsidian border text-ivory font-mono text-base sm:text-sm placeholder:text-ivory-dim/40 focus:border-gold-illuminated focus:outline-none transition-none ${
                         errors.name ? 'border-red-400' : 'border-graphite-light'
                       }`}
                     />
@@ -234,7 +234,7 @@ export const ReservationRequest: React.FC<ReservationRequestProps> = ({
                       placeholder="+91 98300 00000"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className={`w-full px-4 py-3 bg-obsidian border text-ivory font-mono text-sm placeholder:text-ivory-dim/40 focus:border-gold-illuminated focus:outline-none transition-none ${
+                      className={`w-full px-4 py-3 bg-obsidian border text-ivory font-mono text-base sm:text-sm placeholder:text-ivory-dim/40 focus:border-gold-illuminated focus:outline-none transition-none ${
                         errors.phone ? 'border-red-400' : 'border-graphite-light'
                       }`}
                     />
@@ -255,7 +255,7 @@ export const ReservationRequest: React.FC<ReservationRequestProps> = ({
                       placeholder="joydeep@example.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className={`w-full px-4 py-3 bg-obsidian border text-ivory font-mono text-sm placeholder:text-ivory-dim/40 focus:border-gold-illuminated focus:outline-none transition-none ${
+                      className={`w-full px-4 py-3 bg-obsidian border text-ivory font-mono text-base sm:text-sm placeholder:text-ivory-dim/40 focus:border-gold-illuminated focus:outline-none transition-none ${
                         errors.email ? 'border-red-400' : 'border-graphite-light'
                       }`}
                     />
@@ -271,7 +271,7 @@ export const ReservationRequest: React.FC<ReservationRequestProps> = ({
                     <select
                       value={formData.guests}
                       onChange={(e) => setFormData({ ...formData, guests: Number(e.target.value) })}
-                      className="w-full px-4 py-3 bg-obsidian border border-graphite-light text-ivory font-mono text-sm focus:border-gold-illuminated focus:outline-none transition-none"
+                      className="w-full px-4 py-3 bg-obsidian border border-graphite-light text-ivory font-mono text-base sm:text-sm focus:border-gold-illuminated focus:outline-none transition-none"
                     >
                       {[1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 15, 20].map((num) => (
                         <option key={num} value={num} className="bg-obsidian text-ivory">
@@ -293,7 +293,7 @@ export const ReservationRequest: React.FC<ReservationRequestProps> = ({
                       min={today}
                       value={formData.date}
                       onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                      className={`w-full px-4 py-3 bg-obsidian border text-ivory font-mono text-sm focus:border-gold-illuminated focus:outline-none transition-none ${
+                      className={`w-full px-4 py-3 bg-obsidian border text-ivory font-mono text-base sm:text-sm focus:border-gold-illuminated focus:outline-none transition-none ${
                         errors.date ? 'border-red-400' : 'border-graphite-light'
                       }`}
                     />
@@ -309,7 +309,7 @@ export const ReservationRequest: React.FC<ReservationRequestProps> = ({
                     <select
                       value={formData.time}
                       onChange={(e) => setFormData({ ...formData, time: e.target.value })}
-                      className="w-full px-4 py-3 bg-obsidian border border-graphite-light text-ivory font-mono text-sm focus:border-gold-illuminated focus:outline-none transition-none"
+                      className="w-full px-4 py-3 bg-obsidian border border-graphite-light text-ivory font-mono text-base sm:text-sm focus:border-gold-illuminated focus:outline-none transition-none"
                     >
                       {timeSlots.map((slot) => (
                         <option key={slot} value={slot} className="bg-obsidian text-ivory">
@@ -329,7 +329,7 @@ export const ReservationRequest: React.FC<ReservationRequestProps> = ({
                     <select
                       value={formData.cornerPreference}
                       onChange={(e) => setFormData({ ...formData, cornerPreference: e.target.value })}
-                      className="w-full px-4 py-3 bg-obsidian border border-graphite-light text-ivory font-mono text-sm focus:border-gold-illuminated focus:outline-none transition-none"
+                      className="w-full px-4 py-3 bg-obsidian border border-graphite-light text-ivory font-mono text-base sm:text-sm focus:border-gold-illuminated focus:outline-none transition-none"
                     >
                       {cornerOptions.map((opt) => (
                         <option key={opt} value={opt} className="bg-obsidian text-ivory">
@@ -346,7 +346,7 @@ export const ReservationRequest: React.FC<ReservationRequestProps> = ({
                     <select
                       value={formData.occasion}
                       onChange={(e) => setFormData({ ...formData, occasion: e.target.value })}
-                      className="w-full px-4 py-3 bg-obsidian border border-graphite-light text-ivory font-mono text-sm focus:border-gold-illuminated focus:outline-none transition-none"
+                      className="w-full px-4 py-3 bg-obsidian border border-graphite-light text-ivory font-mono text-base sm:text-sm focus:border-gold-illuminated focus:outline-none transition-none"
                     >
                       {occasionOptions.map((occ) => (
                         <option key={occ} value={occ} className="bg-obsidian text-ivory">
@@ -367,7 +367,7 @@ export const ReservationRequest: React.FC<ReservationRequestProps> = ({
                     placeholder="e.g. Quiet corner table, near foosball area..."
                     value={formData.specialRequests}
                     onChange={(e) => setFormData({ ...formData, specialRequests: e.target.value })}
-                    className="w-full px-4 py-3 bg-obsidian border border-graphite-light text-ivory font-mono text-sm placeholder:text-ivory-dim/40 focus:border-gold-illuminated focus:outline-none transition-none resize-none"
+                    className="w-full px-4 py-3 bg-obsidian border border-graphite-light text-ivory font-mono text-base sm:text-sm placeholder:text-ivory-dim/40 focus:border-gold-illuminated focus:outline-none transition-none resize-none"
                   />
                 </div>
 

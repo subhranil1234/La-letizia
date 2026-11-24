@@ -509,7 +509,7 @@ Please confirm order transmission!`;
                     placeholder="e.g. S. Mukherjee"
                     value={customerName}
                     onChange={(e) => setCustomerName(e.target.value)}
-                    className={`w-full px-3.5 py-2.5 bg-graphite/40 border text-ivory text-xs uppercase placeholder:text-ivory-dim/40 focus:border-gold-illuminated focus:outline-none transition-none ${
+                    className={`w-full px-3.5 py-2.5 bg-graphite/40 border text-ivory text-base sm:text-xs uppercase placeholder:text-ivory-dim/40 focus:border-gold-illuminated focus:outline-none transition-none ${
                       errors.name ? 'border-red-400' : 'border-graphite-light'
                     }`}
                   />
@@ -527,7 +527,7 @@ Please confirm order transmission!`;
                     placeholder="+91 98300 00000"
                     value={customerPhone}
                     onChange={(e) => setCustomerPhone(e.target.value)}
-                    className={`w-full px-3.5 py-2.5 bg-graphite/40 border text-ivory text-xs uppercase placeholder:text-ivory-dim/40 focus:border-gold-illuminated focus:outline-none transition-none ${
+                    className={`w-full px-3.5 py-2.5 bg-graphite/40 border text-ivory text-base sm:text-xs uppercase placeholder:text-ivory-dim/40 focus:border-gold-illuminated focus:outline-none transition-none ${
                       errors.phone ? 'border-red-400' : 'border-graphite-light'
                     }`}
                   />
@@ -545,7 +545,7 @@ Please confirm order transmission!`;
                   <select
                     value={pickupTime}
                     onChange={(e) => setPickupTime(e.target.value)}
-                    className="w-full px-3.5 py-2.5 bg-graphite/40 border border-graphite-light text-ivory text-xs uppercase focus:border-gold-illuminated focus:outline-none transition-none"
+                    className="w-full px-3.5 py-2.5 bg-graphite/40 border border-graphite-light text-ivory text-base sm:text-xs uppercase focus:border-gold-illuminated focus:outline-none transition-none"
                   >
                     <option value="In 20–25 Mins (Fast Track)">In 20–25 Mins (Fast Track)</option>
                     <option value="In 30–35 Mins (Standard)">In 30–35 Mins (Standard)</option>
@@ -565,7 +565,7 @@ Please confirm order transmission!`;
                     placeholder="e.g. Mild spice, extra dip"
                     value={specialInstructions}
                     onChange={(e) => setSpecialInstructions(e.target.value)}
-                    className="w-full px-3.5 py-2.5 bg-graphite/40 border border-graphite-light text-ivory text-xs placeholder:text-ivory-dim/40 focus:border-gold-illuminated focus:outline-none transition-none"
+                    className="w-full px-3.5 py-2.5 bg-graphite/40 border border-graphite-light text-ivory text-base sm:text-xs placeholder:text-ivory-dim/40 focus:border-gold-illuminated focus:outline-none transition-none"
                   />
                 </div>
               </div>
