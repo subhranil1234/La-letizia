@@ -137,20 +137,21 @@ export const MarqueeIntro: React.FC<MarqueeIntroProps> = ({ onComplete, onCurtai
         }`}
       >
         {/* Corner Technical Registration Marks */}
-        <div className="absolute top-6 left-6 font-mono text-[10px] uppercase tracking-widest text-gold-champagne/70 flex items-center gap-2">
-          <span className="w-1.5 h-1.5 bg-electricTeal inline-block" />
-          <span>ZEROONE // SENSORY PROLOGUE</span>
+        <div className="absolute top-4 sm:top-6 left-4 sm:left-6 font-mono text-[9px] sm:text-[10px] uppercase tracking-widest text-gold-champagne/70 flex items-center gap-2">
+          <span className="w-1.5 h-1.5 bg-electricTeal inline-block shrink-0" />
+          <span className="hidden xs:inline">ZEROONE // SENSORY PROLOGUE</span>
+          <span className="xs:hidden">ZEROONE</span>
         </div>
 
-        <div className="absolute bottom-6 left-6 font-mono text-[10px] uppercase tracking-widest text-ivory-dim/60 hidden sm:block">
+        <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 font-mono text-[10px] uppercase tracking-widest text-ivory-dim/60 hidden sm:block">
           <span>BALLYGUNGE 700017 • LAT 22.5392° N / LONG 88.3653° E</span>
         </div>
 
         {/* Top Right Skip CTA */}
-        <div className="absolute top-6 right-6 z-40">
+        <div className="absolute top-4 sm:top-6 right-4 sm:right-6 z-40">
           <button
             onClick={handleSkip}
-            className="border border-graphite-light text-ivory-dim hover:text-gold-illuminated hover:border-gold-illuminated px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest transition-none focus-visible:ring-2 focus-visible:ring-gold-illuminated"
+            className="border border-graphite-light text-ivory-dim hover:text-gold-illuminated hover:border-gold-illuminated px-2.5 sm:px-3 py-1 sm:py-1.5 font-mono text-[9px] sm:text-[10px] uppercase tracking-widest transition-none focus-visible:ring-2 focus-visible:ring-gold-illuminated"
             aria-label="Skip intro animation"
           >
             [ SKIP INTRO ]
@@ -205,53 +206,58 @@ export const MarqueeIntro: React.FC<MarqueeIntroProps> = ({ onComplete, onCurtai
         {/* STAGE 2: UNIFIED PERSISTENT TITLE CARD & BESPOKE CUSTOM LOADER
             STAYS ON SCREEN TOGETHER UNTIL FULL DURATION (From 1.1s to 6.0s) */}
         <div
-          className={`relative z-10 flex flex-col items-center justify-center text-center px-4 max-w-4xl mx-auto transition-all duration-700 ease-out select-none ${
+          className={`relative z-10 flex flex-col items-center justify-center text-center px-4 max-w-4xl mx-auto overflow-hidden transition-all duration-700 ease-out select-none ${
             phase === 'active_showcase'
               ? 'opacity-100 scale-100 pointer-events-auto'
               : 'opacity-0 scale-95 pointer-events-none absolute'
           }`}
         >
           {/* Architectural Framing Brackets Framing the Unified Showcase */}
-          <div className="absolute -inset-5 sm:-inset-8 border border-gold-illuminated/30 pointer-events-none" />
-          <div className="absolute -top-5 -left-5 sm:-top-8 sm:-left-8 w-4 h-4 border-t-2 border-l-2 border-gold-illuminated pointer-events-none" />
-          <div className="absolute -top-5 -right-5 sm:-top-8 sm:-right-8 w-4 h-4 border-t-2 border-r-2 border-gold-illuminated pointer-events-none" />
-          <div className="absolute -bottom-5 -left-5 sm:-bottom-8 sm:-left-8 w-4 h-4 border-b-2 border-l-2 border-gold-illuminated pointer-events-none" />
-          <div className="absolute -bottom-5 -right-5 sm:-bottom-8 sm:-right-8 w-4 h-4 border-b-2 border-r-2 border-gold-illuminated pointer-events-none" />
+          <div className="absolute -inset-3 sm:-inset-6 md:-inset-8 border border-gold-illuminated/30 pointer-events-none" />
+          <div className="absolute -top-3 -left-3 sm:-top-6 sm:-left-6 md:-top-8 md:-left-8 w-3 sm:w-4 h-3 sm:h-4 border-t-2 border-l-2 border-gold-illuminated pointer-events-none" />
+          <div className="absolute -top-3 -right-3 sm:-top-6 sm:-right-6 md:-top-8 md:-right-8 w-3 sm:w-4 h-3 sm:h-4 border-t-2 border-r-2 border-gold-illuminated pointer-events-none" />
+          <div className="absolute -bottom-3 -left-3 sm:-bottom-6 sm:-left-6 md:-bottom-8 md:-left-8 w-3 sm:w-4 h-3 sm:h-4 border-b-2 border-l-2 border-gold-illuminated pointer-events-none" />
+          <div className="absolute -bottom-3 -right-3 sm:-bottom-8 sm:-right-8 md:-bottom-8 md:-right-8 w-3 sm:w-4 h-3 sm:h-4 border-b-2 border-r-2 border-gold-illuminated pointer-events-none" />
 
           {/* Unified Brand Showcase: Logo Emblem + Colossal Title Card */}
-          <div className="space-y-2 sm:space-y-3">
-            <div className="flex items-center justify-center gap-2 font-mono text-[9px] sm:text-[10px] uppercase tracking-editorial text-gold-illuminated font-bold">
+          <div className="space-y-1.5 sm:space-y-3">
+            <div className="flex items-center justify-center gap-2 font-mono text-[8px] sm:text-[10px] uppercase tracking-editorial text-gold-illuminated font-bold">
               <span className="w-1.5 h-[1px] bg-gold-illuminated" />
               <span>ZEROONE NOCTURNE DESTINATION</span>
               <span className="w-1.5 h-[1px] bg-gold-illuminated" />
             </div>
 
             {/* Emblem and Brand Monogram */}
-            <div className="flex items-center justify-center gap-3">
-              <LogoEmblem size={52} glow={true} />
+            <div className="flex items-center justify-center gap-2.5 sm:gap-3">
+              <div className="sm:hidden">
+                <LogoEmblem size={38} glow={true} />
+              </div>
+              <div className="hidden sm:block">
+                <LogoEmblem size={50} glow={true} />
+              </div>
               <div className="text-left font-mono">
-                <span className="text-[10px] uppercase tracking-widest text-gold-champagne/80 block">
+                <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-gold-champagne/80 block">
                   BALLYGUNGE, KOLKATA
                 </span>
-                <span className="text-[9px] text-ivory-dim tracking-wider block">
+                <span className="text-[8px] sm:text-[9px] text-ivory-dim tracking-wider block">
                   ESTABLISHED 2024
                 </span>
               </div>
             </div>
 
             {/* Colossal 900 Title with Traveling Gold Metallic Shimmer */}
-            <h1 className="font-serif font-black text-4xl sm:text-6xl md:text-7xl lg:text-[7.5rem] leading-[0.88] uppercase tracking-tighter900 intro-title-slow drop-shadow-2xl">
+            <h1 className="font-serif font-black text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-[7.5rem] leading-[0.88] uppercase tracking-tighter900 intro-title-slow drop-shadow-2xl">
               <span className="intro-shimmer">LA LETIZIA</span>
             </h1>
 
             {/* Outlined Subtitle */}
-            <div className="font-serif font-black text-lg sm:text-2xl md:text-3xl tracking-tight900 uppercase headline-outline-gold">
+            <div className="font-serif font-black text-xs sm:text-xl md:text-2xl lg:text-3xl tracking-tight900 uppercase headline-outline-gold">
               CAFÉ & RESTRO
             </div>
           </div>
 
           {/* Gold Hairline Divider */}
-          <div className="w-28 sm:w-36 h-[1px] bg-gradient-to-r from-transparent via-gold-illuminated to-transparent my-3 sm:my-4" />
+          <div className="w-20 sm:w-36 h-[1px] bg-gradient-to-r from-transparent via-gold-illuminated to-transparent my-2 sm:my-4" />
 
           {/* Bespoke Honeycomb & Hexagonal Ring Loader (Co-existing seamlessly under the Title) */}
           <div className="w-full">

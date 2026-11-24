@@ -65,32 +65,32 @@ export const TheExperience: React.FC = () => {
   return (
     <section
       id="experience"
-      className="relative py-24 md:py-36 scroll-mt-24 md:scroll-mt-28 bg-obsidian text-ivory border-b border-graphite-light overflow-hidden select-none"
+      className="relative py-16 sm:py-24 md:py-36 scroll-mt-24 md:scroll-mt-28 bg-obsidian text-ivory border-b border-graphite-light overflow-hidden select-none"
     >
       {/* Massive Decorative Index Number */}
       <div
-        className="absolute top-12 right-6 md:right-12 font-mono text-8xl md:text-[14rem] font-black text-graphite-light/20 leading-none pointer-events-none select-none z-0"
+        className="absolute top-12 right-4 sm:right-6 md:right-12 font-mono text-6xl sm:text-8xl md:text-[14rem] font-black text-graphite-light/20 leading-none pointer-events-none select-none z-0"
         aria-hidden="true"
       >
         02
       </div>
 
-      <div className="max-w-[1500px] mx-auto px-6 md:px-12 relative z-10 space-y-16">
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 md:px-12 relative z-10 space-y-10 sm:space-y-16">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-graphite-light">
-          <div className="space-y-3">
-            <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-gold-champagne font-bold">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 pb-6 sm:pb-8 border-b border-graphite-light">
+          <div className="space-y-2 sm:space-y-3">
+            <div className="flex items-center gap-2 font-mono text-[10px] sm:text-[11px] uppercase tracking-widest text-gold-champagne font-bold">
               <span>INDEX // 02</span>
               <span>—</span>
               <span>SPATIAL ARCHITECTURE</span>
             </div>
-            <h2 className="font-serif font-black text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight900 uppercase text-ivory">
+            <h2 className="font-serif font-black text-3xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tight900 uppercase text-ivory">
               THE <span className="headline-outline-gold">EXPERIENCE</span>
             </h2>
           </div>
 
-          <div className="font-mono text-xs text-ivory-dim tracking-widest uppercase flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-gold-illuminated" />
+          <div className="font-mono text-[10px] sm:text-xs text-ivory-dim tracking-widest uppercase flex items-center gap-2">
+            <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold-illuminated" />
             <span>AUTHENTIC PHOTOGRAPHY ARCHIVE</span>
           </div>
         </div>
@@ -103,28 +103,28 @@ export const TheExperience: React.FC = () => {
               <button
                 key={zone.id}
                 onClick={() => setActiveZone(idx)}
-                className={`p-6 text-left border-r last:border-r-0 border-graphite-light transition-none relative flex flex-col justify-between h-36 ${
+                className={`p-3.5 sm:p-6 text-left border-r last:border-r-0 border-graphite-light transition-none relative flex flex-col justify-between min-h-[7.5rem] sm:h-36 ${
                   isActive
                     ? 'bg-gold-illuminated text-obsidian font-black'
                     : 'bg-graphite/40 text-ivory hover:bg-graphite hover:text-gold-illuminated'
                 }`}
               >
-                <div className="flex items-center justify-between w-full font-mono text-[11px] tracking-widest">
+                <div className="flex items-center justify-between w-full font-mono text-[10px] sm:text-[11px] tracking-widest">
                   <span className={isActive ? 'text-obsidian font-bold' : 'text-gold-champagne/70'}>
                     {zone.code}
                   </span>
                   <span
-                    className="w-2 h-2 inline-block"
+                    className="w-2 h-2 inline-block shrink-0"
                     style={{ backgroundColor: zone.accentColor }}
                   />
                 </div>
 
                 <div>
-                  <span className="font-serif font-black text-sm md:text-base tracking-tight block uppercase leading-snug">
+                  <span className="font-serif font-black text-xs sm:text-base tracking-tight block uppercase leading-snug">
                     {zone.title}
                   </span>
                   <span
-                    className={`font-mono text-[10px] tracking-widest uppercase block mt-1 ${
+                    className={`font-mono text-[9px] sm:text-[10px] tracking-widest uppercase block mt-1 truncate ${
                       isActive ? 'text-obsidian/80' : 'text-ivory-dim'
                     }`}
                   >
@@ -137,7 +137,7 @@ export const TheExperience: React.FC = () => {
         </div>
 
         {/* Active Zone Editorial Presentation */}
-        <div className="border border-graphite-light p-6 md:p-12 bg-graphite/20">
+        <div className="border border-graphite-light p-4 sm:p-8 md:p-12 bg-graphite/20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Real Photograph with Sharp High-Contrast Frame */}
             <div className="lg:col-span-7">

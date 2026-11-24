@@ -102,7 +102,7 @@ export const CafeCustomLoader: React.FC<CafeCustomLoaderProps> = ({
         </div>
 
         {/* High-Precision Horizontal Progress Gauge */}
-        <div className="w-60 sm:w-72 mx-auto space-y-1">
+        <div className="w-48 sm:w-72 max-w-[85vw] mx-auto space-y-1">
           <div className="w-full h-1 bg-graphite border border-graphite-light overflow-hidden">
             <div
               className="h-full bg-gold-illuminated transition-all duration-150 ease-out shadow-[0_0_8px_#E5AE4C]"
@@ -110,9 +110,9 @@ export const CafeCustomLoader: React.FC<CafeCustomLoaderProps> = ({
             />
           </div>
 
-          <div className="flex items-center justify-between text-[9px] sm:text-[10px] text-ivory-dim tracking-widest">
+          <div className="flex items-center justify-between text-[8px] sm:text-[10px] text-ivory-dim tracking-widest">
             <span className="text-gold-illuminated font-bold">{roundedPct}%</span>
-            <span>70 SOUTH PARK CIRCUS • ZEROONE</span>
+            <span className="truncate ml-2">70 SOUTH PARK CIRCUS</span>
           </div>
         </div>
 

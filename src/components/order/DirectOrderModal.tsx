@@ -173,7 +173,7 @@ Please confirm order transmission!`;
       />
 
       {/* Main Dialog Shell */}
-      <div className="relative w-full max-w-2xl max-h-[92vh] overflow-y-auto bg-obsidian border-2 border-gold-illuminated p-5 sm:p-8 z-10 shadow-2xl flex flex-col justify-between">
+      <div className="relative w-full max-w-2xl max-h-[92vh] overflow-y-auto bg-obsidian border-2 border-gold-illuminated p-4 sm:p-8 z-10 shadow-2xl flex flex-col justify-between">
         {/* =========================================================================
             STAGE 2: CONFIRMED DIGITAL KITCHEN TOKEN PASS (KOT)
             ========================================================================= */}
@@ -358,7 +358,7 @@ Please confirm order transmission!`;
               <span className="font-mono text-[10px] uppercase tracking-widest text-gold-champagne font-bold block">
                 01 // SELECT ORDER MODE
               </span>
-              <div className="grid grid-cols-2 gap-3 font-mono text-xs">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 font-mono text-xs">
                 <button
                   type="button"
                   onClick={() => setOrderType('takeaway_counter')}
@@ -437,7 +437,7 @@ Please confirm order transmission!`;
                   {items.map((item) => (
                     <div
                       key={item.id}
-                      className="p-3 bg-graphite/30 border border-graphite-light flex items-center justify-between text-xs"
+                      className="p-3 bg-graphite/30 border border-graphite-light flex flex-col xs:flex-row xs:items-center justify-between gap-2.5 text-xs"
                     >
                       <div className="space-y-0.5">
                         <span className="font-serif font-bold text-sm text-ivory block uppercase">
@@ -448,7 +448,7 @@ Please confirm order transmission!`;
                         </span>
                       </div>
 
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center justify-between xs:justify-end gap-3 w-full xs:w-auto">
                         <div className="flex items-center border border-graphite-light bg-obsidian">
                           <button
                             type="button"
@@ -478,7 +478,7 @@ Please confirm order transmission!`;
                         <button
                           type="button"
                           onClick={() => onRemoveItem(item.id)}
-                          className="p-1 text-ivory-dim hover:text-red-400 transition-none"
+                          className="p-1 text-ivory-dim hover:text-red-400 transition-none ml-1"
                           aria-label={`Remove ${item.name}`}
                         >
                           <Trash2 className="w-3.5 h-3.5" />
@@ -596,7 +596,7 @@ Please confirm order transmission!`;
                 <button
                   type="submit"
                   disabled={isSubmitting || items.length === 0}
-                  className="w-full sm:w-auto border-2 border-gold-illuminated bg-gold-illuminated text-obsidian px-8 py-3.5 font-mono text-xs uppercase tracking-widest font-black hover:bg-gold-hover transition-none flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full sm:w-auto border-2 border-gold-illuminated bg-gold-illuminated text-obsidian px-5 sm:px-8 py-3.5 font-mono text-xs uppercase tracking-widest font-black hover:bg-gold-hover transition-none flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <span>TRANSMITTING ORDER TO RESTRO...</span>

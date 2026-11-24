@@ -15,7 +15,7 @@ export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
   };
 
   return (
-    <footer className="relative bg-obsidian-deep text-ivory pt-20 pb-12 px-6 md:px-12 select-none">
+    <footer className="relative bg-obsidian-deep text-ivory pt-16 sm:pt-20 pb-10 sm:pb-12 px-4 sm:px-6 md:px-12 select-none">
       <div className="max-w-[1500px] mx-auto space-y-16">
         {/* Top Technical Metadata Row */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-graphite-light font-mono text-xs">

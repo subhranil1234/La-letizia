@@ -139,46 +139,46 @@ export const ExploreFlavours: React.FC<ExploreFlavoursProps> = ({
     <section
       id="menu"
       ref={menuContainerRef}
-      className="relative py-24 md:py-36 scroll-mt-24 md:scroll-mt-28 bg-obsidian text-ivory border-b border-graphite-light overflow-hidden select-none"
+      className="relative py-16 sm:py-24 md:py-36 scroll-mt-24 md:scroll-mt-28 bg-obsidian text-ivory border-b border-graphite-light overflow-hidden select-none"
     >
       {/* Decorative Oversized Index Watermark */}
       <div
-        className="absolute top-12 right-6 md:right-12 font-mono text-8xl md:text-[14rem] font-black text-graphite-light/20 leading-none pointer-events-none select-none z-0"
+        className="absolute top-12 right-4 sm:right-6 md:right-12 font-mono text-6xl sm:text-8xl md:text-[14rem] font-black text-graphite-light/20 leading-none pointer-events-none select-none z-0"
         aria-hidden="true"
       >
         04
       </div>
 
-      <div className="max-w-[1500px] mx-auto px-6 md:px-12 relative z-10 space-y-10">
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 md:px-12 relative z-10 space-y-8 sm:space-y-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-graphite-light">
-          <div className="space-y-3">
-            <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-gold-champagne font-bold">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 pb-6 border-b border-graphite-light">
+          <div className="space-y-2 sm:space-y-3">
+            <div className="flex items-center gap-2 font-mono text-[10px] sm:text-[11px] uppercase tracking-widest text-gold-champagne font-bold">
               <span>INDEX // 04</span>
               <span>—</span>
               <span>GASTRONOMIC ARCHIVE</span>
             </div>
-            <h2 className="font-serif font-black text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight900 uppercase text-ivory">
+            <h2 className="font-serif font-black text-3xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tight900 uppercase text-ivory">
               THE <span className="headline-outline-gold">MENU</span>
             </h2>
           </div>
 
           {/* Quick Header Actions */}
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3">
             <button
               onClick={() => {
                 setSelectedMenuPageIndex(0);
                 setIsMenuModalOpen(true);
               }}
-              className="border border-graphite-light bg-graphite/40 px-5 py-3 font-mono text-xs uppercase tracking-widest text-gold-champagne hover:border-gold-illuminated hover:text-gold-illuminated transition-none flex items-center gap-2"
+              className="w-full sm:w-auto border border-graphite-light bg-graphite/40 px-4 sm:px-5 py-2.5 sm:py-3 font-mono text-[11px] sm:text-xs uppercase tracking-widest text-gold-champagne hover:border-gold-illuminated hover:text-gold-illuminated transition-none flex items-center justify-center gap-2"
             >
-              <BookOpen className="w-4 h-4 text-gold-illuminated" />
+              <BookOpen className="w-4 h-4 text-gold-illuminated shrink-0" />
               <span>[ 📖 12 ORIGINAL CARDS ]</span>
             </button>
 
             <button
               onClick={toggleExpand}
-              className={`border-2 px-6 py-3 font-mono text-xs uppercase tracking-widest font-black transition-none flex items-center gap-2 ${
+              className={`w-full sm:w-auto border-2 px-5 sm:px-6 py-2.5 sm:py-3 font-mono text-[11px] sm:text-xs uppercase tracking-widest font-black transition-none flex items-center justify-center gap-2 ${
                 isExpanded
                   ? 'border-gold-illuminated bg-transparent text-gold-illuminated hover:bg-gold-illuminated hover:text-obsidian'
                   : 'border-gold-illuminated bg-gold-illuminated text-obsidian hover:bg-gold-hover'
@@ -598,22 +598,22 @@ export const ExploreFlavours: React.FC<ExploreFlavoursProps> = ({
 
         {/* Floating Table Tasting Board when dishes are selected */}
         {selectedDishes.length > 0 && (
-          <div className="sticky bottom-6 z-30 p-6 border-2 border-gold-illuminated bg-obsidian-deep shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 font-mono">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-gold-illuminated text-obsidian flex items-center justify-center font-serif font-black text-xl">
+          <div className="sticky bottom-6 z-30 p-4 sm:p-6 border-2 border-gold-illuminated bg-obsidian-deep shadow-2xl flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 md:gap-6 font-mono">
+            <div className="flex items-center gap-3 sm:gap-4">
+              <div className="w-10 sm:w-12 h-10 sm:h-12 bg-gold-illuminated text-obsidian flex items-center justify-center font-serif font-black text-lg sm:text-xl shrink-0">
                 {selectedDishes.length}
               </div>
               <div>
-                <span className="font-bold text-sm uppercase tracking-widest text-gold-champagne block">
-                  TABLE TASTING BOARD // {selectedDishes.length} ITEMS SELECTED
+                <span className="font-bold text-xs sm:text-sm uppercase tracking-widest text-gold-champagne block">
+                  TABLE TASTING BOARD // {selectedDishes.length} ITEMS
                 </span>
-                <span className="text-xs text-ivory-dim">
+                <span className="text-[11px] sm:text-xs text-ivory-dim">
                   Estimated Table Total: <strong className="text-gold-illuminated font-bold text-sm">₹{calculateTotal}</strong>
                 </span>
               </div>
             </div>
 
-            <div className="flex flex-wrap items-center gap-3 w-full md:w-auto">
+            <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-2 sm:gap-3 w-full md:w-auto">
               <button
                 onClick={() => {
                   setSelectedDishes([]);
@@ -621,7 +621,7 @@ export const ExploreFlavours: React.FC<ExploreFlavoursProps> = ({
                     onSelectDishesForBooking([]);
                   }
                 }}
-                className="px-4 py-3 border border-graphite-light text-ivory-dim hover:border-red-400 hover:text-red-400 transition-none text-xs uppercase tracking-widest"
+                className="w-full sm:w-auto px-4 py-2.5 sm:py-3 border border-graphite-light text-ivory-dim hover:border-red-400 hover:text-red-400 transition-none text-xs uppercase tracking-widest text-center"
               >
                 [ CLEAR ]
               </button>
@@ -636,7 +636,7 @@ export const ExploreFlavours: React.FC<ExploreFlavoursProps> = ({
                   }
                   onOpenOrderModal?.();
                 }}
-                className="border border-gold-illuminated bg-gold-illuminated text-obsidian px-5 py-3 uppercase tracking-widest font-black text-xs hover:bg-gold-hover transition-none flex items-center justify-center gap-2"
+                className="w-full sm:w-auto border border-gold-illuminated bg-gold-illuminated text-obsidian px-5 py-2.5 sm:py-3 uppercase tracking-widest font-black text-xs hover:bg-gold-hover transition-none flex items-center justify-center gap-2"
               >
                 <ShoppingBag className="w-4 h-4" />
                 <span>[ ORDER DIRECTLY ]</span>
@@ -649,7 +649,7 @@ export const ExploreFlavours: React.FC<ExploreFlavoursProps> = ({
                   }
                   onOpenBooking();
                 }}
-                className="border border-graphite-light text-ivory px-5 py-3 uppercase tracking-widest font-bold text-xs hover:border-gold-illuminated hover:text-gold-illuminated transition-none flex items-center justify-center gap-2"
+                className="w-full sm:w-auto border border-graphite-light text-ivory px-5 py-2.5 sm:py-3 uppercase tracking-widest font-bold text-xs hover:border-gold-illuminated hover:text-gold-illuminated transition-none flex items-center justify-center gap-2"
               >
                 <span>[ ATTACH TO RESERVATION ]</span>
                 <ArrowRight className="w-4 h-4" />

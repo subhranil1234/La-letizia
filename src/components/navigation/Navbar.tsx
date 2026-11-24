@@ -46,19 +46,19 @@ export const Navbar: React.FC<NavbarProps> = ({
             : 'bg-obsidian/80 border-b border-white/5 py-5'
         }`}
       >
-        <div className="max-w-[1500px] mx-auto px-6 md:px-12 flex items-center justify-between">
+        <div className="max-w-[1500px] mx-auto px-4 sm:px-6 md:px-12 flex items-center justify-between">
           {/* Authentic Brand Monogram & Name */}
           <Link
             href="#"
-            className="flex items-center gap-3.5 group focus-visible:ring-2 focus-visible:ring-gold-illuminated"
+            className="flex items-center gap-2.5 sm:gap-3.5 group focus-visible:ring-2 focus-visible:ring-gold-illuminated"
             aria-label="La Letizia Home"
           >
-            <LogoEmblem size={36} glow={false} />
+            <LogoEmblem size={32} glow={false} />
             <div className="flex flex-col">
-              <span className="font-serif font-black text-lg md:text-xl tracking-tight900 uppercase text-ivory leading-none group-hover:text-gold-illuminated transition-colors">
+              <span className="font-serif font-black text-base xs:text-lg md:text-xl tracking-tight900 uppercase text-ivory leading-none group-hover:text-gold-illuminated transition-colors">
                 LA LETIZIA
               </span>
-              <span className="font-mono text-[9px] uppercase tracking-widest text-gold-champagne/70 mt-1">
+              <span className="font-mono text-[8px] xs:text-[9px] uppercase tracking-widest text-gold-champagne/70 mt-1">
                 KOLKATA • ZEROONE
               </span>
             </div>

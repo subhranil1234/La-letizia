@@ -49,31 +49,31 @@ export const FindYourCorner: React.FC<FindYourCornerProps> = ({
   return (
     <section
       id="gallery"
-      className="relative py-24 md:py-36 scroll-mt-24 md:scroll-mt-28 bg-obsidian-deep text-ivory border-b border-graphite-light overflow-hidden select-none"
+      className="relative py-16 sm:py-24 md:py-36 scroll-mt-24 md:scroll-mt-28 bg-obsidian-deep text-ivory border-b border-graphite-light overflow-hidden select-none"
     >
       {/* Decorative Oversized Index Watermark */}
       <div
-        className="absolute top-12 right-6 md:right-12 font-mono text-8xl md:text-[14rem] font-black text-graphite-light/20 leading-none pointer-events-none select-none z-0"
+        className="absolute top-12 right-4 sm:right-6 md:right-12 font-mono text-6xl sm:text-8xl md:text-[14rem] font-black text-graphite-light/20 leading-none pointer-events-none select-none z-0"
         aria-hidden="true"
       >
         03
       </div>
 
-      <div className="max-w-[1500px] mx-auto px-6 md:px-12 relative z-10 space-y-14">
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 md:px-12 relative z-10 space-y-10 sm:space-y-14">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-graphite-light">
-          <div className="space-y-3">
-            <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-gold-champagne font-bold">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 pb-6 sm:pb-8 border-b border-graphite-light">
+          <div className="space-y-2 sm:space-y-3">
+            <div className="flex items-center gap-2 font-mono text-[10px] sm:text-[11px] uppercase tracking-widest text-gold-champagne font-bold">
               <span>INDEX // 03</span>
               <span>—</span>
               <span>AUTHENTIC SPATIAL ARCHIVE</span>
             </div>
-            <h2 className="font-serif font-black text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight900 uppercase text-ivory">
+            <h2 className="font-serif font-black text-3xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tight900 uppercase text-ivory">
               FIND YOUR <span className="headline-outline-gold">CORNER</span>
             </h2>
           </div>
 
-          <div className="font-mono text-xs text-ivory-dim tracking-widest uppercase">
+          <div className="font-mono text-[10px] sm:text-xs text-ivory-dim tracking-widest uppercase">
             <span>[ 11 REAL PHOTOGRAPHS // ZERO STOCK ASSETS ]</span>
           </div>
         </div>
@@ -87,7 +87,7 @@ export const FindYourCorner: React.FC<FindYourCornerProps> = ({
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCategory(cat.id)}
-                  className={`px-5 py-3 font-mono text-xs uppercase tracking-widest border transition-none whitespace-nowrap flex items-center gap-2 ${
+                  className={`px-3.5 sm:px-5 py-2 sm:py-3 font-mono text-[11px] sm:text-xs uppercase tracking-widest border transition-none whitespace-nowrap flex items-center gap-1.5 sm:gap-2 ${
                     isActive
                       ? 'border-gold-illuminated bg-gold-illuminated text-obsidian font-black'
                       : 'border-graphite-light bg-graphite/40 text-ivory-muted hover:border-gold-illuminated hover:text-gold-illuminated hover:bg-graphite'

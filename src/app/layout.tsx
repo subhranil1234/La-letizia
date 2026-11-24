@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cinzel, Outfit, Space_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -22,6 +22,13 @@ const spaceMono = Space_Mono({
   display: "swap",
   weight: ["400", "700"],
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#10100F",
+};
 
 export const metadata: Metadata = {
   title: "LA LETIZIA | Exaggerated Minimalism Café & Restro | Kolkata",

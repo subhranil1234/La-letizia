@@ -34,7 +34,7 @@ export const CornerModal: React.FC<CornerModalProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10 select-none"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 md:p-10 select-none"
       role="dialog"
       aria-modal="true"
       aria-label={corner.title}
@@ -46,7 +46,7 @@ export const CornerModal: React.FC<CornerModalProps> = ({
       />
 
       {/* Modal Dialog Card with Sharp Brutalist Architecture */}
-      <div className="relative w-full max-w-4xl max-h-[92vh] overflow-y-auto bg-obsidian border-2 border-gold-illuminated p-6 sm:p-8 md:p-10 z-10 flex flex-col gap-6 shadow-2xl">
+      <div className="relative w-full max-w-4xl max-h-[92vh] overflow-y-auto bg-obsidian border-2 border-gold-illuminated p-4 sm:p-8 md:p-10 z-10 flex flex-col gap-6 shadow-2xl">
         {/* Top Control Bar */}
         <div className="flex items-center justify-between pb-4 border-b border-graphite-light font-mono text-xs uppercase tracking-widest">
           <div className="flex items-center gap-3">
